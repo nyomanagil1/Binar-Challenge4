@@ -1,3 +1,5 @@
+import { DatePicker, Input, Select, TimePicker } from 'antd';
+import { Option } from 'antd/lib/mentions';
 import React from 'react';
 import './pencarian.css';
 
@@ -8,36 +10,24 @@ function Pencarian() {
         <div class="card-body d-flex">
           <div className="card-content" style={{ maxWidth: 250, marginRight: 20 }}>
             <p class="mb-1">Tipe Driver</p>
-            <select class="form-select" aria-label="Default select example" style={{ maxWidth: 210 }}>
-              <option selected>Pilih Tipe Driver</option>
-              <option value="1">Dengan Sopir</option>
-              <option value="2">Tanpa Sopir (Lepas Kunci)</option>
-            </select>
+            <Select placeholder="Pilih Tipe Driver" style={{ width: 250 }}>
+              <Option value="1">Dengan Sopir</Option>
+              <Option value="2">Tanpa Sopir (Lepas Kunci)</Option>
+            </Select>
           </div>
           <div className="card-content" style={{ maxWidth: 250, marginRight: 20 }}>
             <p class="mb-1">Tanggal</p>
-            <select class="form-select" aria-label="Default select example" style={{ maxWidth: 210 }}>
-              <option selected>Tanggal</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-            </select>
+            <DatePicker style={{ width: 250 }} />
           </div>
           <div className="card-content" style={{ maxWidth: 250, marginRight: 20 }}>
             <p class="mb-1">Waktu Jemput/Ambil</p>
-            <select class="form-select" aria-label="Default select example" style={{ maxWidth: 210 }}>
-              <option selected>Pilih Waktu</option>
-              <option value="1">08:00 WIB</option>
-              <option value="2">09:00 WIB</option>
-              <option value="3">10:00 WIB</option>
-              <option value="4">11:00 WIB</option>
-              <option value="5">12:00 WIB</option>
-            </select>
+            <TimePicker use12Hours showNow={false} format="HH:mm" style={{ width: 250 }} />
           </div>
           <div className="card-content" style={{ maxWidth: 250, marginRight: 20 }}>
             <p class="mb-1">Jumlah Penumpang (Optional)</p>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Jumlah Penumpang" />
+            <Input placeholder="Jumlah Penumpang" style={{ width: 250 }} />
           </div>
-          <div className="card-content" style={{ position: 'relative', top: '31px' }}>
+          <div className="card-content d-flex align-items-end" >
             <button type="submit" class="sewabtn">
               Cari Mobil
             </button>

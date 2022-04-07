@@ -46,11 +46,11 @@ function DetailComp() {
           <div className="col-lg-4">
             <div className="card card-detail-car h-100">
               <div className="card-body">
-                <div class='d-flex justify-content-center py-3 mb-3'>
+                <div class="d-flex justify-content-center py-3 mb-3">
                   <img src="/img/cardcar.png" alt="" />
                 </div>
                 <h6 class="fw-bold">Nama / Tipe Mobil</h6>
-                <div className="detailmobil d-flex">
+                <div className="detailmobil d-flex pb-3">
                   <p>
                     <img className="me-1" src="../img/carpeople.png" alt="" /> 4 Orang
                   </p>
@@ -61,6 +61,15 @@ function DetailComp() {
                     <img className="me-1 detail" src="../img/carcalendar.png" alt="" /> Tahun 2020
                   </p>
                 </div>
+                <div className="detailtotal d-flex justify-content-between">
+                  <p>Total</p>
+                  <span>Rp 430.000</span>
+                </div>
+                <div>
+              <button type="submit" class="btncontinue mt-3" style={{ width: '100%' }}>
+                Lanjutkan Pembayaran
+              </button>
+            </div>
               </div>
             </div>
           </div>
