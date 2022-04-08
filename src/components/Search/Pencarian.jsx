@@ -1,9 +1,15 @@
 import { DatePicker, Input, Select, TimePicker } from 'antd';
 import { Option } from 'antd/lib/mentions';
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './pencarian.css';
 
 function Pencarian() {
+  let navigate = useNavigate();
+  const handleSubmit = () => {
+    navigate('/hasil');
+  }
+
   return (
     <>
       <div class="card card-carimobil">
@@ -27,8 +33,8 @@ function Pencarian() {
             <p class="mb-1">Jumlah Penumpang (Optional)</p>
             <Input placeholder="Jumlah Penumpang" style={{ width: 250 }} />
           </div>
-          <div className="card-content d-flex align-items-end" >
-            <button type="submit" class="sewabtn">
+          <div className="card-content d-flex align-items-end">
+            <button onClick={handleSubmit} class="sewabtn">
               Cari Mobil
             </button>
           </div>

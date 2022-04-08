@@ -1,7 +1,30 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import './detail.css';
 
 function DetailComp() {
+  const [dataDetail, setDataDetail] = useState([]);
+  const [loading, setLoading] = useState(false);
+  let navigate = useNavigate();
+  let { id } = useParams();
+
+  const handleDetail = async (id) => {
+    setLoading(true);
+    try {
+      const res = await axios(`https://rent-cars-api.herokuapp.com/admin/car/${id}`);
+      setDataDetail(res.data);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    handleDetail(id);
+  }, []);
+
   return (
     <>
       <div className="container">
@@ -49,7 +72,7 @@ function DetailComp() {
                 <div class="d-flex justify-content-center py-3 mb-3">
                   <img src="/img/cardcar.png" alt="" />
                 </div>
-                <h6 class="fw-bold">Nama / Tipe Mobil</h6>
+                <h6 class="fw-bold"> {dataDetail.name} </h6>
                 <div className="detailmobil d-flex pb-3">
                   <p>
                     <img className="me-1" src="../img/carpeople.png" alt="" /> 4 Orang
@@ -63,13 +86,13 @@ function DetailComp() {
                 </div>
                 <div className="detailtotal d-flex justify-content-between">
                   <p>Total</p>
-                  <span>Rp 430.000</span>
+                  <span>Rp. {new Intl.NumberFormat('id-ID').format(dataDetail.price)}</span>
                 </div>
                 <div>
-              <button type="submit" class="btncontinue mt-3" style={{ width: '100%' }}>
-                Lanjutkan Pembayaran
-              </button>
-            </div>
+                  <button type="submit" class="btncontinue mt-3" style={{ width: '100%' }}>
+                    Lanjutkan Pembayaran
+                  </button>
+                </div>
               </div>
             </div>
           </div>

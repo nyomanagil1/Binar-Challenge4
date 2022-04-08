@@ -6,7 +6,9 @@ function Header() {
     <nav class="Navbar navbar-expand-lg navbar-light pb-5" style={{ backgroundColor: '#f1f3ff' }}>
       <div class="container">
         <div class="Collapse navbar-collapse" id="navbarNav">
-          <img src="../img/logo.svg" alt="logo" />
+          <a href="/">
+            <img src="../img/logo.svg" alt="logo" />
+          </a>
           <ul class="navbar-nav ms-auto">
             <li class="NavItem mx-2">
               <a class="nav-link" href="/">

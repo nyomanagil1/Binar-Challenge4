@@ -9,7 +9,7 @@ function Home() {
     <>
       <Header />
       <Hero />
-      <div class='d-flex justify-content-center'>
+      <div class="d-flex justify-content-center">
         <Pencarian />
       </div>
       <Footer />
