@@ -70,7 +70,7 @@ function DetailComp() {
             <div className="card card-detail-car h-100">
               <div className="card-body">
                 <div class="d-flex justify-content-center py-3 mb-3">
-                  <img src="/img/cardcar.png" alt="" />
+                  <img src={dataDetail.image} alt="" style={{ width: '100%' }} />
                 </div>
                 <h6 class="fw-bold"> {dataDetail.name} </h6>
                 <div className="detailmobil d-flex pb-3">
